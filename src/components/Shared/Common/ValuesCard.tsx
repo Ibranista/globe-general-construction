@@ -11,13 +11,14 @@ function ValuesCard({
     image?: string,
     type?: string
 }) {
+    const IMAGE_PATH = import.meta.env.VITE_ASSETS_PATH;
     return (
         type !== 'capabilities' && (
 
             <div className="grid__item" style={{
                 marginRight: 10,
             }}>
-                <div className="card"><img className="card__img" src={`/src/assets/${image}`} alt="Snowy Mountains" />
+                <div className="card"><img className="card__img" src={`${IMAGE_PATH}/${image}`} alt="Snowy Mountains" />
                     <div className="card__content">
                         <h1 className="card__header">{title}</h1>
                         <p className="card__text">
@@ -34,7 +35,7 @@ function ValuesCard({
             <div className="card"
                 style={{
                     padding: '10px 370px 10px 170px',
-                    background: `url(./src/assets/${image}) no-repeat fixed`,
+                    background: `url(${IMAGE_PATH}/${image}) no-repeat fixed`,
                     width: '100%',
                     backgroundColor: 'rgba(255, 255, 255, 0.925)',
                     backgroundBlendMode: 'overlay',

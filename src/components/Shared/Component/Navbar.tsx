@@ -3,6 +3,7 @@ import { Flex, Link, List, NavWrapper } from "../Common"
 import { useTheme } from "styled-components"
 
 function Navbar() {
+    const IMAGE_PATH = import.meta.env.VITE_ASSETS_PATH;
     return (
         <Flex justifyContent="space-between"
             style={{ fontSize: '.8rem' }}
@@ -10,7 +11,9 @@ function Navbar() {
             flexWrap='wrap'
         >
             <Flex>
-                <img src=".\src\assets\logo.png" alt="logo" width={"200px"}
+                <img 
+                src={`${IMAGE_PATH}/logo.png`} 
+                alt="logo" width={"200px"}
                     style={{
                         position: 'absolute',
                         top: -23,
@@ -103,7 +106,9 @@ const NavLinks = () => {
                     About Us
                 </Link>
             </List>
-            <img src=".\src\assets\crane-svg-icon.svg" width={40} />
+            <img 
+            src = {`${import.meta.env.VITE_ASSETS_PATH}/crane-svg-icon.svg`}
+            width={40} />
         </NavWrapper >
     )
 }

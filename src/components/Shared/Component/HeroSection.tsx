@@ -1,9 +1,9 @@
 
 function HeroSection() {
+    const ASSETS_PATH = import.meta.env.VITE_ASSETS_PATH;
     return (
         <main style={{
-            // background: 'url(./src/assets/bulldozer-on-mountain-modified.jpg) no-repeat fixed',
-            background: 'url(./src/assets/hero-bulldozor1.jpg) no-repeat fixed',
+            background: `url(${ASSETS_PATH}/hero-bulldozor1.jpg) no-repeat fixed`,
             backgroundSize: 'cover',
             backgroundPositionY: -300, paddingLeft: 130
         }}>

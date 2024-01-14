@@ -5,6 +5,7 @@ function Card({
 }: {
     image?: string, title?: string, content?: string
 }) {
+    const IMAGE_PATH = import.meta.env.VITE_ASSETS_PATH;
     return (
         <div
             style={{
@@ -31,7 +32,7 @@ function Card({
             >
                 <Flex style={{ width: '100%', height: '100%', paddingRight: '20px' }}>
                     <section className="image" style={{ width: '100%', height: '100%' }}>
-                        <img src={`/src/assets/${image}`} width='100%'
+                        <img src={`${IMAGE_PATH}/${image}`} width='100%'
                             height='100%'
                         />
                     </section>
