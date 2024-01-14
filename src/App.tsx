@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useRef } from "react";
+import { ThemeProvider, useTheme } from "styled-components";
+import { useOnClickOutside } from "./hooks";
+import { GlobalStyles } from "./global";
+import { theme } from "./theme";
+import { Burger, Flex, Menu } from "./components";
+import FocusLock from "react-focus-lock";
+import { Footer, HeroSection, LandingContent, Navbar, ValuesCard } from "./components/Shared";
+import { Card, CarouselCard, Divider } from "./components/Shared/Common";
+import { Values, missionVision } from "./components/utils/content";
+import './Style.App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <div style={{ paddingBottom: '90px' }}>
+        <GlobalStyles />
+        {/* <div ref={node}> */}
+        {/* <FocusLock disabled={!open}> */}
+        {/* <Burger open={open} setOpen={setOpen} aria-controls={menuId} /> */}
+        {/* <Menu open={open} setOpen={setOpen} id={menuId} /> */}
+        {/* </FocusLock> */}
+        {/* </div> */}
+
+        <Navbar />
+        <HeroSection />
+        <LandingContent />
+        <>
+          <Flex style={{ padding: '5rem 170px' }}
+            flexWrap='wrap'
+          >
+            {
+              missionVision?.map((item, index) => {
+                return (
+                  <Card
+                    key={index}
+                    image={item?.image}
+                    title={item?.title}
+                    content={item?.content}
+                  />
+                )
+
+              })
+            }
+          </Flex >
+          <Divider title='Our Values' />
+          <CarouselCard />
+          <Divider title='Capabilities' />
+          <section
+            style={{
+              width: '80%',
+              margin: '50px auto'
+            }}
+          >
+            <ValuesCard
+              title='title'
+              content='content'
+              image='capabilities.png'
+              type='capabilities'
+            />
+          </section>
+          <Divider title='The Team' />
+          <CarouselCard type='theTeam' />
+        </>
+      </div >
+      <Footer />
+    </ThemeProvider >
+  );
 }
 
-export default App
+export default App;
