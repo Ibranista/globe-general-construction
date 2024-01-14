@@ -1,20 +1,13 @@
-import React, { useState, useRef } from "react";
-import { ThemeProvider, useTheme } from "styled-components";
-import { useOnClickOutside } from "./hooks";
+import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global";
 import { theme } from "./theme";
-import { Burger, Flex, Menu } from "./components";
-import FocusLock from "react-focus-lock";
+import { Flex } from "./components";
 import { Footer, HeroSection, LandingContent, Navbar, ValuesCard } from "./components/Shared";
 import { Card, CarouselCard, Divider } from "./components/Shared/Common";
-import { Values, missionVision } from "./components/utils/content";
+import { missionVision } from "./components/utils/content";
 import './Style.App.css';
 
 function App() {
-  const [open, setOpen] = useState(false);
-  const node = useRef();
-  const menuId = "main-menu";
-  useOnClickOutside(node, () => setOpen(false));
 
   return (
     <ThemeProvider theme={theme}>

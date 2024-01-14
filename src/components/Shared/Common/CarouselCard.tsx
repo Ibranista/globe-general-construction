@@ -2,7 +2,7 @@ import Carousel from 'react-elastic-carousel';
 import { Values, theTeam } from '../../utils/content';
 import { ValuesCard } from '..';
 
-function CarouselCard({ type }: { type: string }) {
+function CarouselCard({ type }: { type?: string }) {
     const values = type !== 'theTeam' ? Values : theTeam;
     return (
         <>
