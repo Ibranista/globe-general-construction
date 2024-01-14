@@ -9,6 +9,7 @@ function CarouselCard({ type }: { type?: string }) {
             <div className="grid"
                 style={{ padding: '0 170px', marginTop: '5rem' }}
             >
+                {/* @ts-expect-error carousel children prop*/}
                 <Carousel itemsToShow={3} itemWidth={200}
                     enableSwipe
                     enableMouseSwipe

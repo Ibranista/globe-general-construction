@@ -1,13 +1,15 @@
-import React from "react";
 import { bool } from "prop-types";
 import { StyledMenu } from "./Menu.styled";
 
-const Menu = ({ open, ...props }) => {
+const Menu = ({ open, ...props }: {
+  open: boolean,
+
+}) => {
   const isHidden = open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
 
   return (
-    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+    <StyledMenu aria-hidden={!isHidden} {...props}>
       <a href="/" tabIndex={tabIndex}>
         <span aria-hidden="true">💁🏻‍♂️</span>
         About us
