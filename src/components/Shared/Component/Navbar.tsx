@@ -7,17 +7,19 @@ function Navbar() {
     return (
         <Flex justifyContent="space-between"
             style={{ fontSize: '.8rem' }}
-            padding='10px 10em'
+            padding='20px 10em'
             flexWrap='wrap'
+            background="#fff"
+            navbar
         >
-            <Flex>
+            <Flex navbar>
                 <img 
                 src={`${IMAGE_PATH}/logo.png`} 
                 alt="logo" width={"200px"}
                     style={{
                         position: 'absolute',
-                        top: -23,
-                        left: '-2%',
+                        top: -10,
+                        left: '-1px',
                     }}
                 />
                 <TelComponent />
@@ -32,11 +34,12 @@ export default Navbar
 const TelComponent = () => {
     const theme = useTheme()
     return (
-        <li
+        <List
             style={{
                 textDecoration: "none",
                 listStyleType: "none",
-                marginLeft: 60
+                marginLeft: 110,
+                fontWeight:'bold'
             }}
         >
             <Link href="tel:123-456-7890"
@@ -47,68 +50,33 @@ const TelComponent = () => {
                 }} />
                 <span>123-456-7890</span>
             </Link>
-        </li >
+        </List >
     )
 }
 
 const NavLinks = () => {
+    const links = [
+        { name: 'Home', href: '#' },
+        { name: 'Services', href: '#' },
+        { name: 'Our Team', href: '#' },
+        { name: 'Market Insights', href: '#' },
+        { name: 'Experience', href: '#' },
+        { name: 'Contact Us', href: '#' },
+        { name: 'About Us', href: '#' },
+    ];
+
     return (
-        <NavWrapper
-            flexWrap='wrap'
-            justifyContent='space-around'
-        >
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    Home
+        <NavWrapper flexWrap='wrap' justifyContent='space-around'>
+            {links.map((link) => (
+                <Link 
+                navLinks
+                fontSize='16px' href={link.href} aria-current="page">
+                    <List padding='10px' onHover='#EFFFFA' style={{ minWidth: '100px' }}>
+                        {link.name}
+                    </List>
                 </Link>
-            </List>
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    Services
-                </Link>
-            </List>
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    Our Team
-                </Link>
-            </List>
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    Market Insights
-                </Link>
-            </List>
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    Experience
-                </Link>
-            </List>
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    Contact Us
-                </Link>
-            </List>
-            <List
-                style={{ minWidth: '100px' }}
-            >
-                <Link href="#" aria-current="page">
-                    About Us
-                </Link>
-            </List>
-            <img 
-            src = {`${import.meta.env.VITE_ASSETS_PATH}/crane-svg-icon.svg`}
-            width={40} />
-        </NavWrapper >
-    )
-}
+            ))}
+            <img src={`${import.meta.env.VITE_ASSETS_PATH}/crane-svg-icon.svg`} width={40} />
+        </NavWrapper>
+    );
+};

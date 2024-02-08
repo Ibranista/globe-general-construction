@@ -20,7 +20,8 @@ const NavWrapper = styled.div<FlexProps>`
     position:fixed;
     left:0;
     top:10rem;
-    background:orange;
+    padding:10px 0;
+    background:linear-gradient(to bottom, #7ea9e2, #98c1d9);
   }
     
     `;

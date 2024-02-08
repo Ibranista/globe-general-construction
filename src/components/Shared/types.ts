@@ -13,5 +13,10 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
     pr?: string;
     pt?: string;
     pb?: string;
+    ml?: string;
+    mr?: string;
+    mb?: string;
+    mt?: string;
     flexDirection?: string;
+    navbar?: boolean;
 }

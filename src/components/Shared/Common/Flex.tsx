@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 import { FlexProps } from "../types";
 
 const Flex = styled.div<FlexProps>`
@@ -14,6 +14,14 @@ const Flex = styled.div<FlexProps>`
     padding-right:${({ pr }) => pr || 'null'};
     padding-top:    ${({ pt }) => pt || 'null'};
     padding-bottom: ${({ pb }) => pb || 'null'};
+
+
+    @media (max-width:  1499px) {
+        ${props => props.navbar && css`;
+            padding:15px 20px;
+        `}
+    }
+
     `;
 
 export default Flex;
