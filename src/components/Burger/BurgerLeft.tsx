@@ -172,7 +172,7 @@ const Ul = styled.ul<styledBurgerProps>`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-    z-index: 30;
+    z-index: 15;
     li {
       color: #fff;
     }
