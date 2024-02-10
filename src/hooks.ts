@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useOnClickOutside = (ref: any, handle: any) => {
@@ -6,15 +6,14 @@ export const useOnClickOutside = (ref: any, handle: any) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const listener = (event: any) => {
       if (!ref.current || ref.current.contains(event.target)) {
-        return;
+        return
       }
-      handle(event);
-    };
-    document.addEventListener("mousedown", listener);
+      handle(event)
+    }
+    document.addEventListener('mousedown', listener)
 
     return () => {
-      document.removeEventListener("mousedown", listener);
-    };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  }, [ref, handle]);
-};
+      document.removeEventListener('mousedown', listener)
+    }
+  }, [ref, handle])
+}

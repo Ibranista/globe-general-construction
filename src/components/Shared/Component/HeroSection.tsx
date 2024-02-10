@@ -4,7 +4,6 @@ import {
 } from '../../Styles/HeroSectionStyle'
 
 function HeroSection() {
-  const ASSETS_PATH = import.meta.env.VITE_ASSETS_PATH
   return (
     <SectionWrapperStyle>
       <HeroSectionStyle>

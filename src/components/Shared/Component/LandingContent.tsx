@@ -3,7 +3,7 @@ import {
   LandingSectionStyle,
   LandingTextStyle,
 } from '../../Styles/LandingContentStyle'
-import { Divider } from '../Common'
+// import { Divider } from '../Common'
 
 function LandingContent() {
   const [expanded, setExpanded] = useState(false)

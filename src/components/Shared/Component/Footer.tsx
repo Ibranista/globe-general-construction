@@ -1,12 +1,6 @@
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import '../../../Style.Footer.css'
 
-const labelStyle = {
-  fontWeight: 'bold',
-  display: 'block',
-  marginBottom: '5px',
-}
-
 const inputStyle = {
   padding: '5px',
   border: '1px solid #ccc',

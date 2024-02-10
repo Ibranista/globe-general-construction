@@ -1,5 +1,5 @@
 import { FaPhone } from 'react-icons/fa'
-import { Flex, Link, List, NavWrapper } from '../Common'
+import { Flex, Link, List } from '../Common'
 import { useTheme } from 'styled-components'
 import { Navbar as Navs } from '../../Burger/BurgerLeft'
 function Navbar() {
@@ -54,20 +54,3 @@ export const links = [
   { name: 'Contact', href: '#' },
   { name: 'About Us', href: '#' },
 ]
-const NavLinks = () => {
-  return (
-    <NavWrapper flexWrap='wrap' justifyContent='space-around'>
-      {links.map((link) => (
-        <Link navLinks fontSize='16px' href={link.href} aria-current='page'>
-          <List padding='10px' onHover='#EFFFFA' style={{ minWidth: '100px' }}>
-            {link.name}
-          </List>
-        </Link>
-      ))}
-      <img
-        src={`${import.meta.env.VITE_ASSETS_PATH}/crane-svg-icon.svg`}
-        width={40}
-      />
-    </NavWrapper>
-  )
-}
