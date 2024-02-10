@@ -87,14 +87,15 @@ export const Navbar = () => {
 
 const TelWrapper = styled.div`
   margin-left: 160px;
-  min-width: fit-content;
+  min-width: 190px;
   padding-top: 10px;
 
   @media (max-width: 600px) {
-    margin-right: 200px;
+    margin-right: 400px;
   }
   @media (max-width: 400px) {
     display: none;
+    margin-right: 10px;
   }
 `
 
@@ -107,7 +108,7 @@ const StyledBurger = styled.div<styledBurgerProps>`
   height: 2rem;
   position: fixed;
   top: 30px;
-  right: 20px;
+  /* right: 20px; */
   z-index: 20;
   display: none;
 

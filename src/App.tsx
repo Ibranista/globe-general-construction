@@ -11,12 +11,12 @@ import {
 } from './components/Shared'
 import { Card, CarouselCard, Divider } from './components/Shared/Common'
 import { missionVision } from './components/utils/content'
-import './Style.App.css'
+// import './Style.App.css'
 import { Navbar as Navs } from './components/Burger/BurgerLeft'
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ paddingBottom: '90px' }}>
+      <div style={{ paddingBottom: '90px', background: 'skyblue' }}>
         <GlobalStyles />
         {/* <div ref={node}> */}
         {/* <FocusLock disabled={!open}> */}

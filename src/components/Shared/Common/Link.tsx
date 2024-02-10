@@ -23,6 +23,9 @@ const Link = styled.a<LinkProps>`
         width: 100%;
       `}
   }
+  @media (max-width: 600px) {
+    font-size: 1.2em !important;
+  }
 `
 
 export default Link
