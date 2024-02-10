@@ -99,7 +99,11 @@ function Footer() {
           />
         </form>
         <div className='row'>
-          Globe General Constraction Copyright © 2023 - All rights reserved
+          Bole, Behind Aberus Building <h4>1st Floor, Room No, 010/015</h4>
+        </div>
+        <div className='row' style={{ lineHeight: 1.4 }}>
+          Globe General Constraction Copyright Addis Ababa, Ethiopia © 2023 -
+          All rights reserved
         </div>
       </div>
     </footer>
