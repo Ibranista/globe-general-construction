@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './global'
 import { theme } from './theme'
-import { Flex } from './components'
 import {
   Footer,
   HeroSection,
@@ -9,10 +8,8 @@ import {
   Navbar,
   ValuesCard,
 } from './components/Shared'
-import { Card, CarouselCard, Divider } from './components/Shared/Common'
-import { missionVision } from './components/utils/content'
-// import './Style.App.css'
-import { Navbar as Navs } from './components/Burger/BurgerLeft'
+import { CarouselCard, Divider } from './components/Shared/Common'
+import './Style.App.css'
 import { MissionVisionCard } from './components/Shared/Common/Card'
 function App() {
   return (

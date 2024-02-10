@@ -65,7 +65,7 @@ export default Card
 export const MissionVisionCard = () => {
   return (
     <>
-      <div style={{ marginBottom: '10px' }}>
+      <div style={{ marginBottom: '30px' }}>
         <Divider title='Mission & Vision' />
       </div>
       <MissionVisionWrapperStyle>
