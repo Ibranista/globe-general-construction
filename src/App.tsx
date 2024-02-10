@@ -16,7 +16,7 @@ import { Navbar as Navs } from './components/Burger/BurgerLeft'
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ paddingBottom: '90px', background: 'skyblue' }}>
+      <div style={{ paddingBottom: '90px' }}>
         <GlobalStyles />
         {/* <div ref={node}> */}
         {/* <FocusLock disabled={!open}> */}
