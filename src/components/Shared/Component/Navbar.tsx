@@ -3,7 +3,7 @@ import { Flex, Link, List, NavWrapper } from '../Common'
 import { useTheme } from 'styled-components'
 import { Navbar as Navs } from '../../Burger/BurgerLeft'
 function Navbar() {
-  const IMAGE_PATH = import.meta.env.VITE_ASSETS_PATH
+  // const IMAGE_PATH = import.meta.env.VITE_ASSETS_PATH
   return (
     <Flex
       justifyContent='space-between'

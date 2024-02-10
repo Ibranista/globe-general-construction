@@ -26,27 +26,25 @@ function App() {
         <Navbar />
         <HeroSection />
         <LandingContent />
-        <>
-          <MissionVisionCard />
-          <Divider title='Our Values' />
-          <CarouselCard />
-          <Divider title='Capabilities' />
-          <section
-            style={{
-              width: '80%',
-              margin: '50px auto',
-            }}
-          >
-            <ValuesCard
-              title='title'
-              content='content'
-              image='capabilities.png'
-              type='capabilities'
-            />
-          </section>
-          <Divider title='The Team' />
-          <CarouselCard type='theTeam' />
-        </>
+        <MissionVisionCard />
+        <Divider title='Our Values' />
+        <CarouselCard />
+        <Divider title='Capabilities' />
+        <section
+          style={{
+            width: '80%',
+            margin: '50px auto',
+          }}
+        >
+          <ValuesCard
+            title='title'
+            content='content'
+            image='capabilities.png'
+            type='capabilities'
+          />
+        </section>
+        <Divider title='The Team' />
+        <CarouselCard type='theTeam' />
       </div>
       <Footer />
     </ThemeProvider>

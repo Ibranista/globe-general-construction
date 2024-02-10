@@ -91,8 +91,16 @@ const TelWrapper = styled.div`
   padding-top: 10px;
 
   @media (max-width: 600px) {
-    margin-right: 400px;
+    min-width: unset;
+    margin-left: unset;
+    margin-right: 55px;
   }
+
+  @media (max-width: 450px) {
+    font-size: 10px;
+    width: 150px;
+  }
+
   @media (max-width: 400px) {
     display: none;
     margin-right: 10px;
@@ -108,7 +116,7 @@ const StyledBurger = styled.div<styledBurgerProps>`
   height: 2rem;
   position: fixed;
   top: 30px;
-  /* right: 20px; */
+  right: 15px;
   z-index: 20;
   display: none;
 
