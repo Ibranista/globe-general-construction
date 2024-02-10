@@ -1,4 +1,9 @@
 import { Flex } from '.'
+import {
+  CapabilitiesContainer,
+  CapabilitiesFlexWrapper,
+  CapabilitiesWrapper,
+} from '../../Styles/CapabilitiesStyle'
 // import '../../../Style.App.css'
 function ValuesCard({
   title,
@@ -24,7 +29,7 @@ function ValuesCard({
           <img
             className='card__img'
             src={`${IMAGE_PATH}/${image}`}
-            alt='Snowy Mountains'
+            alt='building'
           />
           <div className='card__content'>
             <h1 className='card__header'>{title}</h1>
@@ -33,24 +38,9 @@ function ValuesCard({
         </div>
       </div>
     )) || (
-      <div
-        className='grid__item'
-        style={{
-          marginRight: 10,
-        }}
-      >
-        <div
-          className='card'
-          style={{
-            padding: '10px 370px 10px 170px',
-            background: `url(${IMAGE_PATH}/${image}) no-repeat fixed`,
-            width: '100%',
-            backgroundColor: 'rgba(255, 255, 255, 0.925)',
-            backgroundBlendMode: 'overlay',
-            backgroundSize: 'cover',
-          }}
-        >
-          <Flex alignItems='flex-start' justifyContent='center'>
+      <CapabilitiesWrapper>
+        <CapabilitiesContainer>
+          <CapabilitiesFlexWrapper>
             <div>
               <h1
                 style={{
@@ -59,7 +49,7 @@ function ValuesCard({
                   padding: '10px 0',
                 }}
               >
-                Design
+                General
               </h1>
               <p className='card__text'>
                 <li style={{ width: '300px' }}>Building Construction</li>
@@ -105,9 +95,9 @@ function ValuesCard({
                 projects on time and within budget.
               </p>
             </div>
-          </Flex>
-        </div>
-      </div>
+          </CapabilitiesFlexWrapper>
+        </CapabilitiesContainer>
+      </CapabilitiesWrapper>
     )
   )
 }
