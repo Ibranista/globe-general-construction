@@ -13,6 +13,7 @@ import { Card, CarouselCard, Divider } from './components/Shared/Common'
 import { missionVision } from './components/utils/content'
 // import './Style.App.css'
 import { Navbar as Navs } from './components/Burger/BurgerLeft'
+import { MissionVisionCard } from './components/Shared/Common/Card'
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -29,18 +30,7 @@ function App() {
         <HeroSection />
         <LandingContent />
         <>
-          <Flex style={{ padding: '5rem 170px' }} flexWrap='wrap'>
-            {missionVision?.map((item, index) => {
-              return (
-                <Card
-                  key={index}
-                  image={item?.image}
-                  title={item?.title}
-                  content={item?.content}
-                />
-              )
-            })}
-          </Flex>
+          <MissionVisionCard />
           <Divider title='Our Values' />
           <CarouselCard />
           <Divider title='Capabilities' />
