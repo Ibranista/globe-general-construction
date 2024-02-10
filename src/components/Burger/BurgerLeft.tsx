@@ -20,7 +20,7 @@ const Burger = () => {
 
 export default Burger
 
-const RightNav = ({ open }) => {
+const RightNav = ({ open }: { open: boolean }) => {
   return (
     <Ul open={open}>
       {links.map((link) => (
@@ -50,8 +50,12 @@ const Nav = styled.nav`
   /* border-bottom: 2px solid #f1f1f1; */
   padding: 0 20px;
   display: flex;
+  /* justify-content: space-between; */
   justify-content: space-between;
-
+  @media (max-width: 1160px) {
+    justify-content: center;
+    margin-left: 150px;
+  }
   .logo {
     padding: 15px 0;
   }
@@ -74,6 +78,7 @@ export const Navbar = () => {
       <TelWrapper>
         <TelComponent />
       </TelWrapper>
+      <div></div>
       <Burger />
     </Nav>
   )
@@ -81,25 +86,38 @@ export const Navbar = () => {
 // styles
 
 const TelWrapper = styled.div`
-  @media (max-width: 1500px) {
-    margin-left: 120px;
-    margin-top: 10px;
+  margin-left: 160px;
+  min-width: fit-content;
+  padding-top: 10px;
+
+  @media (max-width: 600px) {
+    margin-right: 200px;
+  }
+  @media (max-width: 400px) {
+    display: none;
   }
 `
 
-const StyledBurger = styled.div`
-  width: 2rem;
+type styledBurgerProps = {
+  open: boolean
+}
+
+const StyledBurger = styled.div<styledBurgerProps>`
+  width: 4rem;
   height: 2rem;
   position: fixed;
-  top: 15px;
+  top: 30px;
   right: 20px;
   z-index: 20;
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1065px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   div {
@@ -124,17 +142,18 @@ const StyledBurger = styled.div`
     }
   }
 `
-const Ul = styled.ul`
+const Ul = styled.ul<styledBurgerProps>`
   list-style: none;
   display: flex;
-  flex-flow: row nowrap;
-
+  /* flex-flow: row nowrap; */
+  justify-content: flex-end;
   li {
     padding: 18px 10px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1065px) {
     flex-flow: column nowrap;
+    justify-content: space-around;
     background-color: #0d2538;
     position: fixed;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};

@@ -29,7 +29,7 @@ export const TelComponent = () => {
       style={{
         textDecoration: 'none',
         listStyleType: 'none',
-        marginLeft: 110,
+        // marginLeft: 110,
         fontWeight: 'bold',
       }}
     >
