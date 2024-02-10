@@ -23,6 +23,7 @@ function CarouselCard({ type }: { type?: string }) {
           pagination={false}
           showArrows={false}
           enableAutoPlay
+          initialActiveIndex={0}
         >
           {values?.map((item, index) => (
             <>
