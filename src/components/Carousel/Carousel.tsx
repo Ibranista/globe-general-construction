@@ -34,7 +34,7 @@ function Carousel({ showComponent, children }: CarouselProps) {
       autoPlaySpeed={30000}
       initialActiveIndex={0}
       // isRTL={true}
-      onNextEnd={(current, index) => index === 2 && goto(0)}
+      onNextEnd={(_current, index) => index === 2 && goto(0)}
     >
       {children}
     </ElasticCarousel>
