@@ -1,6 +1,6 @@
 import { SectionWrapperStyle } from '../components/Styles/HeroSectionStyle'
 import '../components/Styles/CarouselStyle.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ExperienceCard, RenderCarousel } from '../components'
 import { Experiences, GeneralExperiences } from '../components/utils/content'
 import { Divider } from '../components/Shared/Common'
@@ -15,6 +15,39 @@ function Experience() {
       setShowComponent(true)
     }
   }, [])
+
+  const generalExperienceCards = useMemo(
+    () =>
+      GeneralExperiences.map((experience, index) => (
+        <ExperienceCard
+          index={index}
+          image={`generalExperience/${experience?.image}`}
+          title1={'Design'}
+          title2='Construct'
+          title3={experience?.title}
+          content={experience?.content}
+          showComponent={showComponent}
+        />
+      )),
+    [],
+  )
+
+  const japaneseGardenCards = useMemo(
+    () =>
+      Experiences.japaneseGarden.map((experience, index) => (
+        <ExperienceCard
+          direction='row-reverse'
+          index={index}
+          image={`JapaneseGarden/${experience?.image}`}
+          title1={'Design'}
+          title2='Construct'
+          title3={experience?.title}
+          content={experience?.content}
+          showComponent={showComponent}
+        />
+      )),
+    [showComponent],
+  )
 
   return (
     <SectionWrapperStyle id='experience'>
@@ -49,36 +82,11 @@ function Experience() {
         </RenderCarousel>
         <Divider title='Japanse Garden' />
         <RenderCarousel showComponent={showComponent}>
-          {Experiences.japaneseGarden.map((experience, index) => {
-            return (
-              <ExperienceCard
-                direction='row-reverse'
-                index={index}
-                image={`JapaneseGarden/${experience?.image}`}
-                title1={'Design'}
-                title2='Construct'
-                title3={experience?.title}
-                content={experience?.content}
-                showComponent={showComponent}
-              />
-            )
-          })}
+          {japaneseGardenCards}
         </RenderCarousel>
         <Divider title='General Experience Show Case' />
         <RenderCarousel showComponent={showComponent}>
-          {GeneralExperiences.map((experience, index) => {
-            return (
-              <ExperienceCard
-                index={index}
-                image={`generalExperience/${experience?.image}`}
-                title1={'Design'}
-                title2='Construct'
-                title3={experience?.title}
-                content={experience?.content}
-                showComponent={showComponent}
-              />
-            )
-          })}
+          {generalExperienceCards}
         </RenderCarousel>
       </ExperienceHeroSectionStyle>
     </SectionWrapperStyle>
