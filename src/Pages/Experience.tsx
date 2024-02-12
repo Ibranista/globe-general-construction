@@ -29,7 +29,7 @@ function Experience() {
           showComponent={showComponent}
         />
       )),
-    [],
+    [showComponent],
   )
 
   const japaneseGardenCards = useMemo(
@@ -84,7 +84,7 @@ function Experience() {
         <RenderCarousel showComponent={showComponent}>
           {japaneseGardenCards}
         </RenderCarousel>
-        <Divider title='General Experience Show Case' />
+        <Divider title='Show Case' />
         <RenderCarousel showComponent={showComponent}>
           {generalExperienceCards}
         </RenderCarousel>
