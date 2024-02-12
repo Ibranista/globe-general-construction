@@ -15,6 +15,7 @@ import { useTheme } from 'styled-components'
 import { expCardProps } from '../types'
 import { BiPhone } from 'react-icons/bi'
 import '../../components/Styles/CarouselStyle.css'
+import { Link } from '../Shared/Common'
 
 function ExperienceCard({
   index,
@@ -70,7 +71,9 @@ function ExperienceCard({
       {/* Button */}
       <ExpButtonDivWrapper>
         <StyledButtonDiv className='contactUsButton'>
-          Contact Us
+          <Link href='tel:123-456-7890' color={theme.secondary.light}>
+            Contact Us
+          </Link>
           <BiPhone className='phoneIcon' />
         </StyledButtonDiv>
       </ExpButtonDivWrapper>

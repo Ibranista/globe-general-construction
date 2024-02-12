@@ -42,8 +42,8 @@ export const ExperienceBackgroundDiv = styled.div<{
   image: string
 }>`
   background: url(${(props) => props.image}) no-repeat fixed right;
-  /* background-size: contain; */
-  animation: ${zoomBackground} 55s linear infinite;
+  background-size: contain;
+  animation: ${zoomBackground} 30s linear infinite;
   height: 85vh;
   background-color: rgba(255, 255, 255, 0.295);
   background-blend-mode: overlay;

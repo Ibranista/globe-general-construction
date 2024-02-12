@@ -48,7 +48,7 @@ function Footer() {
           </ul> */}
         </div>
         <form
-          action='mailto:techofreact@gmail.com'
+          action='mailto:kedirhass7122@gmail.com'
           method='POST'
           encType='text/plain'
           name='EmailForm'

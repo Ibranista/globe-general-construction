@@ -39,7 +39,7 @@ export const TelComponent = () => {
             marginRight: 10,
           }}
         />
-        <span>123-456-7890</span>
+        <span>+251 97 834 9917</span>
       </Link>
     </List>
   )
