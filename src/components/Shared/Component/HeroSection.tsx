@@ -5,7 +5,7 @@ import {
 
 function HeroSection() {
   return (
-    <SectionWrapperStyle>
+    <SectionWrapperStyle bgImage='hero-bulldozor1'>
       <HeroSectionStyle>
         <p className='sectionTitle'>Global General Construction</p>
         <p className='sectionSubTitle'>

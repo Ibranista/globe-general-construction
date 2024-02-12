@@ -7,16 +7,17 @@ const zoom = keyframes`
   100% { background-size: 2000px; }
 `
 
-export const SectionWrapperStyle = styled.div`
-  background: url(${ASSETS_PATH}/hero-bulldozor1.jpg) no-repeat fixed;
+export const SectionWrapperStyle = styled.div<{ bgImage?: string }>`
+  background: url(${({ bgImage }) => `${ASSETS_PATH}/${bgImage}.jpg`}) no-repeat
+    fixed;
   background-size: 2000px;
   /* background-position-y: -0px; */
   animation: ${zoom} 100s infinite;
 `
 
-export const HeroSectionStyle = styled.section`
+export const HeroSectionStyle = styled.section<{ padding?: string | number }>`
   min-width: 300px;
-  padding: 50px 0 0px 0;
+  padding: (${({ padding }) => padding || '50px 0 0px 0'});
   margin-left: 200px;
   margin-right: 200px;
   width: 800px;
@@ -33,6 +34,7 @@ export const HeroSectionStyle = styled.section`
       serif;
     font-weight: 700;
     color: #355070;
+    margin-top: 15px;
     /* width: 80rem; */
   }
   p.sectionSubTitle {
@@ -51,6 +53,17 @@ export const HeroSectionStyle = styled.section`
     background: rgba(68, 66, 66, 0.192);
     padding-left: 20px;
     color: #e9e9e9;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  p.aboutContent {
+    line-height: 1.7;
+    font-size: 1.2rem;
+    /* width: 80rem; */
+    /* background: rgba(68, 66, 66, 0.192); */
+    padding-left: 20px;
+    /* color: #e9e9e9; */
     padding: 20px;
     text-align: justify;
   }

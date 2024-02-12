@@ -14,7 +14,7 @@ function CarouselCard({ type }: { type?: string }) {
   const values = type !== 'theTeam' ? Values : theTeam
   return (
     <>
-      <ValuesCarouselWrapper className='grid'>
+      <ValuesCarouselWrapper className='grid' id='theTeam'>
         {/* @ts-expect-error carousel children prop*/}
         <Carousel
           breakPoints={breakPoints}

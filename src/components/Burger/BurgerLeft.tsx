@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { TelComponent, links } from '../Shared/Component/Navbar'
-import { Link, List } from '../Shared/Common'
+import { Link as StyledLink, List } from '../Shared/Common'
+import { Link } from 'react-router-dom'
 
 const Burger = () => {
   const [open, setOpen] = useState(false)
@@ -25,14 +26,21 @@ const RightNav = ({ open }: { open: boolean }) => {
     <Ul open={open}>
       {links.map((link) => (
         <>
-          <Link navLinks fontSize='16px' href={link.href} aria-current='page'>
-            <List
-              padding='10px'
-              onHover='#EFFFFA'
-              style={{ minWidth: '100px' }}
+          <Link to={`${link.href}`}>
+            <StyledLink
+              navLinks
+              fontSize='16px'
+              // href={link.href}
+              aria-current='page'
             >
-              {link.name}
-            </List>
+              <List
+                padding='10px'
+                onHover='#EFFFFA'
+                style={{ minWidth: '100px' }}
+              >
+                {link.name}
+              </List>
+            </StyledLink>
           </Link>
         </>
       ))}

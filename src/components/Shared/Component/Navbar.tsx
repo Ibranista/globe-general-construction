@@ -46,11 +46,11 @@ export const TelComponent = () => {
 }
 
 export const links = [
-  { name: 'Home', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Our Team', href: '#' },
-  { name: 'Insights', href: '#' },
-  { name: 'Experience', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/About' },
+  // { name: 'Services', href: '#' },
+  { name: 'Our Team', href: '/About#theTeam' },
+  // { name: 'Insights', href: '#' },
+  { name: 'Experience', href: '/#experience' },
   { name: 'Contact', href: '#' },
-  { name: 'About Us', href: '#' },
 ]
