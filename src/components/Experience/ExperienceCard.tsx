@@ -71,7 +71,7 @@ function ExperienceCard({
       {/* Button */}
       <ExpButtonDivWrapper>
         <StyledButtonDiv className='contactUsButton'>
-          <Link href='tel:123-456-7890' color={theme.secondary.light}>
+          <Link href='tel:+251-97-834-9917' color={theme.secondary.light}>
             Contact Us
           </Link>
           <BiPhone className='phoneIcon' />

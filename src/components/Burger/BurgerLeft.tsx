@@ -73,16 +73,18 @@ export const Navbar = () => {
   const IMAGE_PATH = import.meta.env.VITE_ASSETS_PATH
   return (
     <Nav>
-      <img
-        src={`${IMAGE_PATH}/logo.png`}
-        alt='logo'
-        width={'200px'}
-        style={{
-          position: 'absolute',
-          top: -10,
-          left: '-1px',
-        }}
-      />
+      <Link to='/Home'>
+        <img
+          src={`${IMAGE_PATH}/logo.png`}
+          alt='logo'
+          width={'200px'}
+          style={{
+            position: 'absolute',
+            top: -10,
+            left: '-1px',
+          }}
+        />
+      </Link>
       <TelWrapper>
         <TelComponent />
       </TelWrapper>
